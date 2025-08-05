@@ -1,0 +1,21 @@
+.submissions-list-container {
+  margin-top: 20px;
+}
+
+.submissions-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  border-bottom: 2px solid #ddd;
+  background-color: #f8f9fa;
+}
+
+.header-item {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .submissions-header {
+    display: none;
+  }
+}

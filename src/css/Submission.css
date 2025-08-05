@@ -1,0 +1,113 @@
+.submission-card {
+  transition: transform 0.2s ease-in-out;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submission-card:hover {
+  transform: scale(1.02);
+}
+
+.submission-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.submission-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.submission-attribute {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.submission-card.success {
+  color: green;
+}
+
+.submission-card.error {
+  color: red;
+}
+
+.attribute-label {
+  display: none;
+  font-weight: bold;
+  font-size: 1em;
+  color: #555;
+}
+
+.attribute-value {
+  font-size: 1.1em;
+}
+
+.submission-title {
+  font-weight: bold;
+}
+
+.code-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+.code-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+}
+
+.close-button,
+.copy-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  position: absolute;
+  top: 10px;
+}
+
+.close-button {
+  right: 10px;
+}
+
+.copy-button {
+  right: 50px;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-top: 40px;
+}
+
+@media (max-width: 767px) {
+  .submission-content {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .submission-attribute {
+    width: 100%;
+    padding: 5px 0;
+  }
+
+  .attribute-label {
+    display: inline-block;
+    margin-right: 5px;
+  }
+}

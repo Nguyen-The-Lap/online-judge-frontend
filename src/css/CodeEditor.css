@@ -1,0 +1,283 @@
+/* Menu Bar Styles */
+.menu-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  background-color: darkcyan;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.menu-bar .language-select {
+  display: flex;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+}
+
+.menu-bar .buttons {
+  padding: 6px 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.theme-button,
+.refresh-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.theme-button {
+  background-color: #ffb74d;
+  color: #fff;
+}
+
+.refresh-button {
+  background-color: #ff7043;
+  color: #fff;
+}
+
+.theme-button:hover {
+  background-color: #ff9800;
+}
+
+.refresh-button:hover {
+  background-color: #f4511e;
+}
+
+/* Editor Container Styles */
+.editor-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 540px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.code-editor {
+  flex: 1;
+  min-height: 570px;
+}
+
+/* Main Buttons and Console Container Styles */
+.console-and-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.main-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  padding: 5px 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.console-button,
+.run-button,
+.submit-button {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.console-button {
+  background-color: #3498db;
+  color: white;
+}
+
+.console-button:hover {
+  background-color: #2980b9;
+}
+
+.run-button {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.run-button:hover {
+  background-color: #27ae60;
+}
+
+.submit-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #c0392b;
+}
+
+/* Console Styles */
+.console {
+  width: 100%;
+  height: auto;
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.console.show {
+  max-height: 100vh;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 12px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  color: #666;
+  transition: background-color 0.3s ease;
+}
+
+.tabs button.active {
+  font-weight: bold;
+  color: #333;
+  border-bottom: 2px solid #333;
+}
+
+.tabs button:hover {
+  background-color: #f0f0f0;
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+}
+
+.tab-content div {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.tab-content textarea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  overflow: auto;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.tab-content textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.tab-content textarea:hover {
+  border-color: #ccc;
+}
+
+div.output-div,
+div.verdict-div {
+  display: block;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  padding: 10px;
+}
+
+/* Info Text Styles */
+.info-text {
+  color: grey;
+  font-weight: bold;
+}
+
+/* Result Styles */
+.result-success {
+  margin-left: 5px;
+  font-weight: bold;
+  color: green;
+}
+
+.result-error {
+  margin-left: 5px;
+  font-weight: bold;
+  color: red;
+}
+
+/* Test Case Styles */
+.test-cases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.test-case-success {
+  background-color: green;
+  color: white;
+  font-size: 14px;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.test-case-failure {
+  background-color: red;
+  color: white;
+  font-size: 14px;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+div.loading-spinner {
+  /* border:none; */
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  font-size: 2.5rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

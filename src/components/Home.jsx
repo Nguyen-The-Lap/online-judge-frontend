@@ -6,53 +6,85 @@ import "../css/Home.css";
 const Home = () => {
   const { auth } = useContext(AuthContext);
 
+  const renderCard = (title, description, linkText, to) => (
+    <div className="home-card">
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <Link to={to} className="home-link">
+        {linkText}
+      </Link>
+    </div>
+  );
+
   return (
-    <div className="home">
-      {auth.isAdmin ? (
-        <>
-          <p>
-            Ready to add new problems?{" "}
-            <Link to="/problem">Create a new problem</Link>.
-          </p>
-          <p>
-            Problems can be edited now!{" "}
-            <Link to="/problemset">Go to problems</Link>.
-          </p>
-          <p>
-            Observe the competition!{" "}
-            <Link to="/leaderboard">Check the leaderboard</Link>.
-          </p>
-        </>
-      ) : auth.isAuthenticated ? (
-        <>
-          <p>
-            Start solving problems now!{" "}
-            <Link to="/problemset">Go to problems</Link>.
-          </p>
-          <p>
-            Join the competition!{" "}
-            <Link to="/leaderboard">Check the leaderboard</Link>.
-          </p>
-          <p>
-            View your submissions <Link to="/submissions">here</Link>.
-          </p>
-        </>
-      ) : (
-        <>
-          <p>
-            Welcome! Please <Link to="/login">log in</Link> to start solving or
-            creating problems.
-          </p>
-          <p>
-            Checkout the problems now!{" "}
-            <Link to="/problemset">Go to problems</Link>.
-          </p>
-          <p>
-            Observe the competition!{" "}
-            <Link to="/leaderboard">Check the leaderboard</Link>.
-          </p>
-        </>
-      )}
+    <div className="home-container">
+      <h1 className="home-title">Welcome to the Online Judge</h1>
+      <div className="home-grid">
+        {auth.isAdmin ? (
+          <>
+            {renderCard(
+              "Create Problems",
+              "Ready to add new problems?",
+              "Create a new problem",
+              "/problem"
+            )}
+            {renderCard(
+              "Problemset",
+              "Problems can be edited now.",
+              "Go to problems",
+              "/problemset"
+            )}
+            {renderCard(
+              "Leaderboard",
+              "Observe the competition!",
+              "Check the leaderboard",
+              "/leaderboard"
+            )}
+          </>
+        ) : auth.isAuthenticated ? (
+          <>
+            {renderCard(
+              "Start Solving",
+              "Start solving problems now!",
+              "Go to problems",
+              "/problemset"
+            )}
+            {renderCard(
+              "Leaderboard",
+              "Join the competition!",
+              "Check the leaderboard",
+              "/leaderboard"
+            )}
+            {renderCard(
+              "My Submissions",
+              "View your submissions anytime.",
+              "View submissions",
+              "/submissions"
+            )}
+          </>
+        ) : (
+          <>
+            {renderCard(
+              "Login",
+              "Welcome! Please log in to get started.",
+              "Log in",
+              "/login"
+            )}
+            {renderCard(
+              "Browse Problems",
+              "Check out available problems.",
+              "Go to problems",
+              "/problemset"
+            )}
+            {renderCard(
+              "Leaderboard",
+              "Observe the competition leaderboard.",
+              "Check the leaderboard",
+              "/leaderboard"
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 };

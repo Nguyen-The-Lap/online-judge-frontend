@@ -30,49 +30,54 @@ function ProblemPage({ p }) {
         <span className="detail">Coding Score: {p?.codingScore}</span>
         <div className="detail">
           <span>Tags: </span>
-          {p?.tags.map((tag, index) => (
+          {(p?.tags || []).map((tag, index) => (
             <span key={index} className="tag">
               {tag}
             </span>
           ))}
         </div>
       </div>
+
       <h2>Description</h2>
       <p>
-        {p?.description.split("\n").map((line, index) => (
+        {(p?.description || '').split("\n").map((line, index) => (
           <React.Fragment key={index}>
             {line}
             <br />
           </React.Fragment>
         ))}
       </p>
+
       <h2>Input Format</h2>
       <p>
-        {p?.inputFormat.split("\n").map((line, index) => (
+        {(p?.inputFormat || '').split("\n").map((line, index) => (
           <React.Fragment key={index}>
             {line}
             <br />
           </React.Fragment>
         ))}
       </p>
+
       <h2>Output Format</h2>
       <p>
-        {p?.outputFormat.split("\n").map((line, index) => (
+        {(p?.outputFormat || '').split("\n").map((line, index) => (
           <React.Fragment key={index}>
             {line}
             <br />
           </React.Fragment>
         ))}
       </p>
+
       <h2>Constraints</h2>
       <p>
-        {p?.constraints.split("\n").map((line, index) => (
+        {(p?.constraints || '').split("\n").map((line, index) => (
           <React.Fragment key={index}>
             {line}
             <br />
           </React.Fragment>
         ))}
       </p>
+
       <h2>
         Sample Input
         <button
@@ -84,6 +89,7 @@ function ProblemPage({ p }) {
         </button>
       </h2>
       <pre ref={sampleInputRef}>{p?.sampleInput}</pre>
+
       <h2>
         Sample Output
         <button
@@ -95,11 +101,12 @@ function ProblemPage({ p }) {
         </button>
       </h2>
       <pre ref={sampleOutputRef}>{p?.sampleOutput}</pre>
-      {p?.explanation && (
+
+      {(p?.explanation || '') && (
         <>
           <h2>Explanation</h2>
           <p>
-            {p?.explanation.split("\n").map((line, index) => (
+            {(p?.explanation || '').split("\n").map((line, index) => (
               <React.Fragment key={index}>
                 {line}
                 <br />
